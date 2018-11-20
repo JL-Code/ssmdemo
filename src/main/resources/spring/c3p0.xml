@@ -6,7 +6,7 @@
     <!--数据库配置参数-->
 
     <!--需要添加xmlns:context="http://www.springframework.org/schema/context"-->
-    <context:property-placeholder location="properties/db.properties"/>
+    <context:property-placeholder location="classpath:properties/db.properties"/>
     <!--连接c3p0连接池-->
     <bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driver}"/>
