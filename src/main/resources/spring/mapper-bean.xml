@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="c3p0.xml"/>
+    <import resource="mybatis-config.xml"/>
+
+    <!--创建数据映射器，数据映射器必须为接口-->
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <!--mapperInterface指定mapper接口-->
+        <property name="mapperInterface" value="com.codeme.dao.IUserDAO"/>
+        <!--注入SQLSessionFactory-->
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+</beans>
